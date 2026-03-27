@@ -300,6 +300,42 @@
       font-size: 0.8rem;
       color: var(--brown-light);
     }
+    .hero__schedule {
+      margin: 20px 0 24px;
+      background: linear-gradient(135deg, rgba(181,118,106,0.12), rgba(201,160,85,0.12));
+      border: 1.5px solid var(--rose-light);
+      border-radius: 12px;
+      padding: 16px 22px;
+      display: inline-block;
+    }
+    .hero__schedule-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 6px;
+    }
+    .hero__schedule-dates {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 700;
+      color: var(--brown-deep);
+      line-height: 1.5;
+    }
+    .hero__schedule-sub {
+      font-size: 0.82rem;
+      color: var(--brown-mid);
+      margin-top: 4px;
+    }
+    .hero__schedule-reason {
+      font-size: 0.8rem;
+      color: var(--rose);
+      margin-top: 8px;
+      line-height: 1.7;
+      border-top: 1px solid var(--rose-light);
+      padding-top: 8px;
+    }
     .hero__visual {
       display: flex;
       justify-content: center;
@@ -1120,10 +1156,18 @@
             姫路で実際に旅館を運営する現役女性オーナーが、<br>
             開業のリアルをすべてお話しします。
           </p>
+          <div class="hero__schedule">
+            <div class="hero__schedule-label">✦ 開催日程 決定</div>
+            <div class="hero__schedule-dates">
+              4月17日（金）・18日（土）・19日（日）
+            </div>
+            <div class="hero__schedule-sub">💻 オンライン開催　｜　20:00〜22:00</div>
+            <div class="hero__schedule-reason">家事・育児が一段落した夜の時間帯。<br>お子様が寝てから、ゆっくり自分のペースで参加できます。</div>
+          </div>
           <div class="hero__badges">
             <span class="hero__badge">🆓 参加無料</span>
             <span class="hero__badge">👩 女性限定</span>
-            <span class="hero__badge">🏯 姫路開催</span>
+            <span class="hero__badge">💻 オンライン開催</span>
             <span class="hero__badge">⚡ 先着10名</span>
           </div>
           <button class="btn-primary" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
@@ -1468,15 +1512,15 @@
           <tr>
             <th>開催日時</th>
             <td>
-              <strong>2026年 近日開催（日程調整中）</strong><br>
-              お申し込みいただいた方に優先的にご案内いたします
+              <strong>2026年4月17日（金）・18日（土）・19日（日）</strong><br>
+              全3日間・各日 20:00〜22:00
             </td>
           </tr>
           <tr>
-            <th>会場</th>
+            <th>開催形式</th>
             <td>
-              <strong>姫路市内（詳細は申込者に個別案内）</strong><br>
-              JR姫路駅よりアクセス良好な会場を予定
+              <strong>オンライン開催（Zoom予定）</strong><br>
+              <span class="small">申込後にURLをお送りします</span>
             </td>
           </tr>
           <tr>
@@ -1496,7 +1540,7 @@
           <tr>
             <th>時間</th>
             <td>
-              <strong>約2時間（予定）</strong><br>
+              <strong>20:00〜22:00（各日2時間）</strong><br>
               セミナー60分 ＋ Q&Aタイム60分
             </td>
           </tr>
