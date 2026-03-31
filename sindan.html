@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旅館オーナー魅力タイプ診断 | 女性のための小規模旅館・民泊開業セミナー</title>
+  <meta name="description" content="あなたは5タイプのうちどの旅館オーナータイプ？魅力タイプ診断を旅館業に応用。25の質問でわかる、あなただけの宿づくりスタイル。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:       #FBF7F2;
+      --cream-dark:  #F0E9DF;
+      --peach:       #F5E4D8;
+      --rose:        #B5766A;
+      --rose-light:  #E8C4B8;
+      --rose-mid:    #C9978C;
+      --sage:        #7A9E80;
+      --sage-light:  #C4D9C6;
+      --brown-deep:  #3A2820;
+      --brown-mid:   #7A5A4A;
+      --brown-light: #A48070;
+      --gold:        #C9A055;
+      --white:       #FFFFFF;
+      --font-serif:  'Noto Serif JP', serif;
+      --font-sans:   'Noto Sans JP', sans-serif;
+
+      /* タイプカラー */
+      --col-king:    #C0392B;  /* 王様：赤 */
+      --col-child:   #E67E22;  /* 子供：オレンジ */
+      --col-noble:   #8E44AD;  /* 貴族：紫 */
+      --col-boss:    #27AE60;  /* 社長：緑 */
+      --col-scholar: #2980B9;  /* 学者：青 */
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--brown-deep);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+    /* FADE */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* HEADER */
+    .header {
+      background: var(--brown-deep);
+      padding: 16px 24px;
+      text-align: center;
+    }
+    .header__label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--rose-light); opacity: 0.8;
+    }
+    .header__name {
+      font-family: var(--font-serif);
+      font-size: 1rem; color: var(--cream); font-weight: 600; margin-top: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        radial-gradient(ellipse 70% 55% at 90% 10%, rgba(181,118,106,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 10% 90%, rgba(122,158,128,0.13) 0%, transparent 55%),
+        var(--cream);
+      padding: 68px 0 52px;
+      text-align: center;
+    }
+    .hero__tag {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--rose);
+      border: 1.5px solid var(--rose-light); border-radius: 100px;
+      padding: 6px 20px; margin-bottom: 22px;
+    }
+    .hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+      font-weight: 700; line-height: 1.55;
+      color: var(--brown-deep); margin-bottom: 18px;
+    }
+    .hero__title em { font-style: normal; color: var(--rose); }
+    .hero__lead {
+      font-size: 1rem; color: var(--brown-mid);
+      line-height: 2; max-width: 520px; margin: 0 auto 28px;
+    }
+    .hero__meta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white); border: 1px solid var(--rose-light);
+      border-radius: 12px; padding: 12px 22px;
+      font-size: 0.87rem; color: var(--brown-mid);
+    }
+    .hero__meta span { color: var(--rose); font-weight: 700; }
+
+    /* TYPE PREVIEW */
+    .types-preview {
+      background: var(--peach);
+      padding: 40px 0;
+      border-top: 1px solid var(--rose-light);
+      border-bottom: 1px solid var(--rose-light);
+    }
+    .types-preview__label {
+      text-align: center; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--brown-light); margin-bottom: 18px;
+    }
+    .types-grid {
+      display: flex; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .type-chip {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 6px; padding: 14px 16px; border-radius: 16px;
+      background: var(--white); border: 2px solid transparent;
+      min-width: 90px;
+    }
+    .type-chip__icon { font-size: 1.6rem; line-height: 1; }
+    .type-chip__name {
+      font-family: var(--font-serif); font-size: 0.88rem;
+      font-weight: 700; color: var(--brown-deep);
+    }
+    .type-chip__sub {
+      font-size: 0.68rem; color: var(--brown-light);
+    }
+    .type-chip--king   { border-color: rgba(192,57,43,0.3); }
+    .type-chip--child  { border-color: rgba(230,126,34,0.3); }
+    .type-chip--noble  { border-color: rgba(142,68,173,0.3); }
+    .type-chip--boss   { border-color: rgba(39,174,96,0.3); }
+    .type-chip--scholar{ border-color: rgba(41,128,185,0.3); }
+
+    /* PROGRESS */
+    .progress-wrap {
+      background: var(--cream-dark);
+      padding: 16px 0;
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--rose-light);
+    }
+    .progress-inner {
+      max-width: 780px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .progress-label {
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--rose); white-space: nowrap; flex-shrink: 0;
+    }
+    .progress-bar-bg {
+      flex: 1; height: 6px; background: var(--rose-light);
+      border-radius: 100px; overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%; background: var(--rose);
+      border-radius: 100px; transition: width 0.4s ease; width: 0%;
+    }
+    .progress-count {
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--brown-mid); white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* QUIZ */
+    .quiz-section { padding: 52px 0 80px; }
+
+    .intro-note {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 16px; padding: 24px 28px;
+      margin-bottom: 36px;
+      display: flex; gap: 18px; align-items: flex-start;
+    }
+    .intro-note__icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+    .intro-note__text { font-size: 0.9rem; color: var(--brown-mid); line-height: 1.85; }
+    .intro-note__text strong { color: var(--brown-deep); }
+
+    .scale-guide {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      justify-content: center; margin-bottom: 36px;
+    }
+    .scale-chip {
+      background: var(--white); border: 1.5px solid var(--cream-dark);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 0.82rem; color: var(--brown-mid);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .scale-chip__num {
+      font-weight: 700; color: var(--rose);
+      font-family: var(--font-serif);
+    }
+
+    .question-card {
+      background: var(--white);
+      border-radius: 20px; border: 1.5px solid var(--cream-dark);
+      padding: 30px 36px; margin-bottom: 20px;
+      box-shadow: 0 2px 16px rgba(58,40,32,0.04);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .question-card.answered {
+      border-color: var(--sage-light);
+      box-shadow: 0 2px 16px rgba(122,158,128,0.1);
+    }
+    @media (max-width: 600px) { .question-card { padding: 22px 18px; } }
+
+    .q-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+    }
+    .q-num {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      border: 2px solid var(--rose-light); border-radius: 50%;
+      font-family: var(--font-serif); font-size: 0.85rem; font-weight: 700;
+      color: var(--rose); flex-shrink: 0; transition: all 0.3s;
+    }
+    .question-card.answered .q-num {
+      background: var(--sage); border-color: var(--sage); color: #fff;
+    }
+    .q-text {
+      font-family: var(--font-serif);
+      font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+      font-weight: 600; color: var(--brown-deep); line-height: 1.65;
+    }
+
+    .likert {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+      margin-top: 14px;
+    }
+    @media (max-width: 480px) { .likert { grid-template-columns: repeat(2, 1fr); } }
+
+    .likert-btn {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      padding: 12px 6px; border-radius: 12px;
+      border: 1.5px solid var(--cream-dark);
+      background: var(--cream); cursor: pointer;
+      transition: all 0.22s; user-select: none;
+    }
+    .likert-btn:hover {
+      border-color: var(--rose-light); background: #FEF2EE;
+    }
+    .likert-btn.selected {
+      border-color: var(--rose); background: #FEF0EC;
+    }
+    .likert-btn__score {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
+      color: var(--rose-light); transition: color 0.22s;
+    }
+    .likert-btn.selected .likert-btn__score { color: var(--rose); }
+    .likert-btn__label {
+      font-size: 0.72rem; color: var(--brown-light);
+      text-align: center; line-height: 1.4;
+    }
+    .likert-btn.selected .likert-btn__label { color: var(--brown-mid); }
+
+    /* SUBMIT */
+    .submit-area { text-align: center; padding-top: 20px; }
+    .btn-submit {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
+      color: #fff; background: var(--rose); border: none;
+      border-radius: 100px; padding: 18px 56px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(181,118,106,0.35);
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      letter-spacing: 0.04em;
+    }
+    .btn-submit:hover {
+      background: var(--rose-mid); transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(181,118,106,0.4);
+    }
+    .warn-notice {
+      color: var(--rose); font-size: 0.88rem; font-weight: 700;
+      margin-top: 14px; display: none;
+    }
+    .submit-hint { font-size: 0.8rem; color: var(--brown-light); margin-top: 12px; }
+
+    /* ===== RESULT ===== */
+    .result-section { display: none; padding: 64px 0 100px; }
+
+    .result-card {
+      background: var(--white);
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 8px 48px rgba(58,40,32,0.1);
+    }
+
+    .result-hero {
+      padding: 52px 48px 40px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    @media (max-width: 600px) { .result-hero { padding: 36px 22px 30px; } }
+    .result-hero__bg {
+      position: absolute; inset: 0; z-index: 0;
+      opacity: 0.08;
+    }
+    .result-hero__content { position: relative; z-index: 1; }
+
+    .result-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; border-radius: 100px;
+      padding: 6px 22px; margin-bottom: 18px;
+      display: inline-block;
+    }
+    .result-star { font-family: var(--font-serif); font-size: 0.95rem; margin-bottom: 8px; }
+
+    .result-type-icon { font-size: 3.8rem; margin-bottom: 12px; line-height: 1; }
+    .result-type-name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 700; margin-bottom: 6px;
+    }
+    .result-type-sub {
+      font-size: 1rem; opacity: 0.75; margin-bottom: 24px;
+    }
+
+    /* スコアバー（サークル風） */
+    .score-rings {
+      display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .ring-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .ring-wrap { position: relative; width: 72px; height: 72px; }
+    .ring-wrap svg { transform: rotate(-90deg); }
+    .ring-bg-c { fill: none; stroke: rgba(255,255,255,0.25); stroke-width: 6; }
+    .ring-fill-c { fill: none; stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset 1.2s ease; }
+    .ring-inner {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .ring-pct { font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; }
+    .ring-name { font-size: 0.62rem; opacity: 0.8; }
+
+    /* BODY */
+    .result-body { padding: 40px 48px; }
+    @media (max-width: 600px) { .result-body { padding: 28px 20px; } }
+
+    .result-message {
+      border-left: 3px solid var(--rose); border-radius: 0 12px 12px 0;
+      background: var(--cream); padding: 20px 24px;
+      font-size: 0.97rem; color: var(--brown-mid); line-height: 2;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif); font-size: 1rem; font-weight: 700;
+      color: var(--brown-deep); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-title::before {
+      content: ''; width: 4px; height: 18px;
+      background: var(--rose); border-radius: 2px; flex-shrink: 0;
+    }
+
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 520px) { .feature-grid { grid-template-columns: 1fr; } }
+    .feature-card {
+      background: var(--cream); border-radius: 14px;
+      padding: 16px 18px; border: 1px solid var(--cream-dark);
+    }
+    .feature-card__label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .feature-card__text { font-size: 0.9rem; color: var(--brown-mid); line-height: 1.75; }
+
+    .advice-box {
+      background: var(--peach); border: 1px solid var(--rose-light);
+      border-radius: 16px; padding: 24px 28px; margin-bottom: 30px;
+    }
+    .advice-box__title {
+      font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700;
+      color: var(--brown-deep); margin-bottom: 12px;
+    }
+    .advice-list { list-style: none; }
+    .advice-list li {
+      font-size: 0.92rem; color: var(--brown-mid); line-height: 1.8;
+      padding-left: 20px; position: relative; margin-bottom: 6px;
+    }
+    .advice-list li::before {
+      content: '✦'; position: absolute; left: 0;
+      color: var(--rose); font-size: 0.65rem; top: 0.35em;
+    }
+
+    .caution-box {
+      background: #EAF2EB; border: 1px solid var(--sage-light);
+      border-radius: 16px; padding: 20px 24px; margin-bottom: 30px;
+    }
+    .caution-box__title {
+      font-family: var(--font-serif); font-size: 0.9rem; font-weight: 700;
+      color: var(--sage); margin-bottom: 8px;
+    }
+    .caution-box__text { font-size: 0.9rem; color: var(--brown-mid); line-height: 1.85; }
+
+    /* スコア詳細 */
+    .score-detail {
+      background: var(--cream); border-radius: 16px;
+      padding: 24px; margin-bottom: 32px;
+    }
+    .score-detail-title {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--brown-light); margin-bottom: 16px;
+    }
+    .score-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+    }
+    .score-row:last-child { margin-bottom: 0; }
+    .score-row__icon { font-size: 1.1rem; width: 24px; flex-shrink: 0; }
+    .score-row__label { font-size: 0.85rem; color: var(--brown-mid); width: 90px; flex-shrink: 0; }
+    .score-row__bar-bg {
+      flex: 1; height: 8px; background: var(--cream-dark);
+      border-radius: 100px; overflow: hidden;
+    }
+    .score-row__bar { height: 100%; border-radius: 100px; transition: width 0.9s ease; }
+    .score-row__val { font-size: 0.82rem; font-weight: 700; color: var(--brown-deep); width: 36px; text-align: right; flex-shrink: 0; }
+
+    /* CTA */
+    .cta-box {
+      background: var(--brown-deep); border-radius: 20px;
+      padding: 36px 40px; text-align: center;
+    }
+    @media (max-width: 600px) { .cta-box { padding: 28px 20px; } }
+    .cta-box__label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
+      color: var(--rose-light); text-transform: uppercase; margin-bottom: 10px;
+    }
+    .cta-box__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 3vw, 1.45rem);
+      font-weight: 700; color: var(--cream); line-height: 1.65; margin-bottom: 22px;
+    }
+    .btn-cta {
+      display: inline-block; font-family: var(--font-serif);
+      font-size: 1rem; font-weight: 700; color: #fff;
+      background: var(--rose); border: none; border-radius: 100px;
+      padding: 15px 44px; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(181,118,106,0.4);
+      transition: all 0.3s; text-decoration: none;
+    }
+    .btn-cta:hover { background: var(--rose-mid); transform: translateY(-2px); }
+
+    .btn-retry {
+      display: inline-block; font-size: 0.87rem;
+      color: var(--brown-light); border: 1.5px solid var(--cream-dark);
+      border-radius: 100px; padding: 11px 30px;
+      cursor: pointer; margin-top: 22px;
+      background: transparent; transition: all 0.3s;
+      font-family: var(--font-sans);
+    }
+    .btn-retry:hover { border-color: var(--rose-light); color: var(--rose); }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--cream-dark), transparent);
+      margin: 44px 0;
+    }
+
+    /* FOOTER */
+    .footer { background: var(--brown-deep); padding: 24px; text-align: center; }
+    .footer p { font-size: 0.77rem; color: rgba(251,247,242,0.4); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <p class="header__label">Innkeeper's Attraction Type Diagnosis</p>
+    <p class="header__name">女性のための小規模旅館・民泊開業セミナー</p>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container fade-up">
+      <p class="hero__tag">旅館オーナー 魅力タイプ診断</p>
+      <h1 class="hero__title">
+        あなたはどの<em>タイプ</em>の<br>旅館オーナー？
+      </h1>
+      <p class="hero__lead">
+        旅館を始めるにあたって、大切なのは「向き不向き」より<strong>「やり方の違い」</strong>。<br>
+        25の質問から、あなたらしい宿づくりのスタイルを診断します。
+      </p>
+      <div class="hero__meta">
+        <span>所要時間：約5分</span>
+        &nbsp;｜&nbsp; 全25問 &nbsp;｜&nbsp;
+        <span>5タイプ</span>で診断
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES PREVIEW -->
+  <section class="types-preview">
+    <div class="container">
+      <p class="types-preview__label">診断される5つのタイプ</p>
+      <div class="types-grid">
+        <div class="type-chip type-chip--king">
+          <span class="type-chip__icon">👑</span>
+          <span class="type-chip__name">王様</span>
+          <span class="type-chip__sub">自我の星</span>
+        </div>
+        <div class="type-chip type-chip--child">
+          <span class="type-chip__icon">🎈</span>
+          <span class="type-chip__name">子供</span>
+          <span class="type-chip__sub">本能の星</span>
+        </div>
+        <div class="type-chip type-chip--noble">
+          <span class="type-chip__icon">🎁</span>
+          <span class="type-chip__name">貴族</span>
+          <span class="type-chip__sub">感情の星</span>
+        </div>
+        <div class="type-chip type-chip--boss">
+          <span class="type-chip__icon">🏆</span>
+          <span class="type-chip__name">社長</span>
+          <span class="type-chip__sub">理性の星</span>
+        </div>
+        <div class="type-chip type-chip--scholar">
+          <span class="type-chip__icon">📘</span>
+          <span class="type-chip__name">学者</span>
+          <span class="type-chip__sub">知性の星</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-inner">
+      <span class="progress-label">回答状況</span>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-count" id="progressCount">0 / 25</span>
+    </div>
+  </div>
+
+  <!-- QUIZ SECTION -->
+  <section class="quiz-section" id="quizSection">
+    <div class="container">
+
+      <div class="intro-note fade-up">
+        <div class="intro-note__icon">📋</div>
+        <div class="intro-note__text">
+          <strong>答え方：</strong>各質問を読んで、自分にどのくらい当てはまるかを<strong>1〜4の4段階</strong>で選んでください。<br>
+          正しい答えはありません。「理想の自分」ではなく<strong>「今のありのままの自分」</strong>で答えることが大切です。
+        </div>
+      </div>
+
+      <div class="scale-guide fade-up">
+        <div class="scale-chip"><span class="scale-chip__num">1</span>全然ない</div>
+        <div class="scale-chip"><span class="scale-chip__num">2</span>ほとんどない</div>
+        <div class="scale-chip"><span class="scale-chip__num">3</span>割とそう</div>
+        <div class="scale-chip"><span class="scale-chip__num">4</span>かなりそう</div>
+      </div>
+
+      <div id="questionsContainer"></div>
+
+      <div class="divider"></div>
+
+      <div class="submit-area fade-up">
+        <button class="btn-submit" onclick="showResult()">診断結果を見る →</button>
+        <p class="warn-notice" id="warnNotice">⚠ まだ回答していない質問があります（残り <span id="warnCount"></span>問）</p>
+        <p class="submit-hint">全25問に回答してからボタンを押してください</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESULT SECTION -->
+  <section class="result-section" id="resultSection">
+    <div class="container">
+      <div class="result-card" id="resultCard">
+
+        <div class="result-hero" id="resultHero">
+          <div class="result-hero__bg" id="resultBg"></div>
+          <div class="result-hero__content">
+            <p class="result-label" id="resultLabel"></p>
+            <p class="result-star" id="resultStar"></p>
+            <div class="result-type-icon" id="resultIcon"></div>
+            <div class="result-type-name" id="resultTypeName"></div>
+            <div class="result-type-sub" id="resultTypeSub"></div>
+
+            <div class="score-rings" id="scoreRings"></div>
+          </div>
+        </div>
+
+        <div class="result-body">
+          <div class="result-message" id="resultMessage"></div>
+
+          <p class="section-title">旅館づくりへの活かし方</p>
+          <div class="feature-grid" id="featureGrid"></div>
+
+          <div class="advice-box" id="adviceBox">
+            <p class="advice-box__title" id="adviceTitle"></p>
+            <ul class="advice-list" id="adviceList"></ul>
+          </div>
+
+          <div class="caution-box" id="cautionBox">
+            <p class="caution-box__title">⚡ 注意したいポイント</p>
+            <p class="caution-box__text" id="cautionText"></p>
+          </div>
+
+          <div class="score-detail">
+            <p class="score-detail-title">タイプ別スコア詳細</p>
+            <div id="scoreDetail"></div>
+          </div>
+
+          <div class="cta-box">
+            <p class="cta-box__label">Next Step</p>
+            <p class="cta-box__title" id="ctaText"></p>
+            <a href="index.html" class="btn-cta">セミナー詳細を見る →</a>
+          </div>
+
+          <div style="text-align:center; margin-top: 28px;">
+            <button class="btn-retry" onclick="retryQuiz()">もう一度診断する</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Yuka Fukunaga / 株式会社ハウスインフォ. All rights reserved.</p>
+  </footer>
+
+  <script>
+  // ===== 質問データ =====
+  // type: 'king'(王様) / 'child'(子供) / 'noble'(貴族) / 'boss'(社長) / 'scholar'(学者)
+  const QUESTIONS = [
+    // Q1
+    { id: 1, type: 'king',    text: '自分の「こうしたい」というアイデアや意見がどんどん出てくる' },
+    // Q2
+    { id: 2, type: 'noble',   text: 'サービス精神が旺盛である' },
+    // Q3
+    { id: 3, type: 'scholar', text: '自分が興味を持ったことに対してはとことん深く調べる' },
+    // Q4
+    { id: 4, type: 'boss',    text: '勝ち負けや目標があるほうが燃える' },
+    // Q5
+    { id: 5, type: 'child',   text: '予定をキッチリ立てるよりも、その時の気分でやることを決めたい' },
+    // Q6
+    { id: 6, type: 'king',    text: '自分の中に、独自の美意識や世界観がある' },
+    // Q7
+    { id: 7, type: 'noble',   text: '自分が好きになった人には大体好かれる' },
+    // Q8
+    { id: 8, type: 'scholar', text: '一人で何かに没頭している時間が一番幸せだ' },
+    // Q9
+    { id: 9, type: 'boss',    text: '学級委員や生徒会、部長など、リーダー格に自ら名乗り出たことがある' },
+    // Q10
+    { id: 10, type: 'child',  text: 'つい面白いことを言いたくなってしまう' },
+    // Q11
+    { id: 11, type: 'king',   text: 'プライドが高く、負けず嫌いである' },
+    // Q12
+    { id: 12, type: 'noble',  text: '自分の意見を押し通すよりも人に合わせることが多い' },
+    // Q13
+    { id: 13, type: 'scholar',text: '何かを選ぶときはしっかりリサーチと比較検討してから決める' },
+    // Q14
+    { id: 14, type: 'boss',   text: '人生とは何かを成し遂げるものだと思っている' },
+    // Q15
+    { id: 15, type: 'child',  text: '独特だとか変わっていると言われることが、他の人と比べて多い' },
+    // Q16
+    { id: 16, type: 'king',   text: '自分の意思で、何かしらの創作活動をしていたことがある' },
+    // Q17
+    { id: 17, type: 'noble',  text: '人の輪を乱すような人を見るとザワザワする' },
+    // Q18
+    { id: 18, type: 'scholar',text: '具体的な目標を立て、地道に努力して実現した経験がある' },
+    // Q19
+    { id: 19, type: 'boss',   text: '尊敬する人の中に、歴史上の人物や起業家など「世界を変えた」人がいる' },
+    // Q20
+    { id: 20, type: 'child',  text: '活字よりも映像や音楽・体験が好きだ' },
+    // Q21
+    { id: 21, type: 'king',   text: '目立つことや人と違うことを恐れない' },
+    // Q22
+    { id: 22, type: 'noble',  text: 'リーダーシップを取ることや目立つことには興味がない' },
+    // Q23
+    { id: 23, type: 'scholar',text: '自分の成長を自分自身で感じるときが一番うれしい' },
+    // Q24
+    { id: 24, type: 'boss',   text: '好きかどうかより、人に評価・認められることを優先することが多い' },
+    // Q25
+    { id: 25, type: 'child',  text: '作り込まれた世界観があるものに惹かれる' },
+  ];
+
+  const SCALE = [
+    { val: 1, label: '全然\nない' },
+    { val: 2, label: 'ほとんど\nない' },
+    { val: 3, label: '割と\nそう' },
+    { val: 4, label: 'かなり\nそう' },
+  ];
+
+  // ===== タイプ定義 =====
+  const TYPES = {
+    king: {
+      name: '王様タイプ',
+      star: '〜自我の星〜',
+      icon: '👑',
+      color: '#C0392B',
+      colorLight: 'rgba(192,57,43,0.08)',
+      label: 'Type 王様 — 自我の星',
+      message: 'あなたは独自の世界観とこだわりを持つ「王様タイプ」。旅館業において、あなたの最大の武器は「唯一無二のコンセプトを作り出す力」です。自分が惚れ込んだ空間・体験を徹底的に追求することで、「あの宿でしかできない体験」を生み出せます。人の評価より、自分が納得できるかどうかを大切にしてください。',
+      features: [
+        { label: '強み①', text: '唯一無二のコンセプトを宿に宿らせられる' },
+        { label: '強み②', text: '自分の美意識・こだわりが空間に出る' },
+        { label: '強み③', text: '独自ブランドとして認知されやすい' },
+        { label: '強み④', text: 'ファン（リピーター）がつきやすい' },
+      ],
+      adviceTitle: '✦ 王様タイプの旅館づくり ステップ',
+      advice: [
+        'まず「自分がどんな空間に惚れるか」を徹底的に言語化する',
+        'コンセプトを軸に、インテリア・ネーミング・サービスを一貫させる',
+        '人の目が気になったら、まず自分が泊まりたいと思えるかを基準にする',
+        '実務（清掃・予約管理）は信頼できる人に任せ、コンセプトに集中する',
+        'SNSは「世界観」を見せるツールとして徹底的に活用する',
+      ],
+      caution: '人のニーズを聞きすぎてブレると、一番の強みが失われます。クレームや低評価が来ても「好みが合わない人もいる」と割り切る強さを持ちましょう。実務管理を得意とする貴族・社長タイプと組むと最強です。',
+      cta: 'あなたの世界観を宿に込めるための\n具体的な手順をセミナーでお伝えします。',
+    },
+    child: {
+      name: '子供タイプ',
+      star: '〜本能の星〜',
+      icon: '🎈',
+      color: '#E67E22',
+      colorLight: 'rgba(230,126,34,0.08)',
+      label: 'Type 子供 — 本能の星',
+      message: 'あなたは感性と直感で動く「子供タイプ」。旅館業において、あなたの最大の武器は「宿泊者に"楽しい！"を感じさせる体験設計力」です。トレンドや感性に敏感で、SNSで話題になるような仕掛けを自然に生み出せます。季節ごとに変わる特別な体験型の宿づくりに向いています。',
+      features: [
+        { label: '強み①', text: '「楽しい！」「特別！」を感じさせる体験設計が得意' },
+        { label: '強み②', text: 'トレンドに敏感でSNS映えの仕掛けを作れる' },
+        { label: '強み③', text: '新しいアイデアが次々と湧いてくる' },
+        { label: '強み④', text: '宿泊者と自然体で打ち解けられる' },
+      ],
+      adviceTitle: '✦ 子供タイプの旅館づくり ステップ',
+      advice: [
+        '自分が「ワクワクする」宿体験を徹底的にインプットし感性を磨く',
+        '季節・イベントごとの特別体験を盛り込んだ宿づくりをする',
+        'SNS・写真映えを意識したフォトスポットや仕掛けを作る',
+        '収支計画・予約管理は仕組み化してルーティンにする',
+        '「好き」が伝わるポップな世界観でファンを増やす',
+      ],
+      caution: '計画や数字管理が苦手なまま放置すると経営が不安定になります。感性を活かしながら、数値管理だけは仕組み（PMS・表計算）に任せましょう。疲れたときは無理せず休む。感性が命です。',
+      cta: '感性を活かした体験型の宿づくりを\nセミナーで一緒に設計しましょう。',
+    },
+    noble: {
+      name: '貴族タイプ',
+      star: '〜感情の星〜',
+      icon: '🎁',
+      color: '#8E44AD',
+      colorLight: 'rgba(142,68,173,0.08)',
+      label: 'Type 貴族 — 感情の星',
+      message: 'あなたは気配りとサービス精神が際立つ「貴族タイプ」。旅館業において、あなたの最大の武器は「宿泊者との信頼関係を築く力」です。リピーターと深い絆を作り、口コミ・紹介で広がる経営スタイルが最もあなたらしい宿づくりです。人の気持ちに敏感で、細やかなサービスが口コミ高評価につながります。',
+      features: [
+        { label: '強み①', text: 'リピーター・紹介で広がる信頼型の経営ができる' },
+        { label: '強み②', text: '宿泊者一人ひとりへの細やかな気配りが評判を生む' },
+        { label: '強み③', text: '地域の人脈を活かした仕入れ・連携が得意' },
+        { label: '強み④', text: '口コミ・SNSでの高評価を自然と積み重ねられる' },
+      ],
+      adviceTitle: '✦ 貴族タイプの旅館づくり ステップ',
+      advice: [
+        '最初は少人数・1棟からスタートし、一人ひとりを大切にする運営を徹底する',
+        '宿泊後のフォロー（お礼メッセージ・リピーター特典）で関係を深める',
+        '地域の飲食店・体験スポットとのネットワークを積極的に広げる',
+        '「ここだから来た」というファンを大切にし、口コミを育てる',
+        '信頼できるパートナーを決めてから事業をスタートする',
+      ],
+      caution: '相手によって全てが左右されるので「誰と組むか」が重要。最初のパートナー選びを焦らず、本当に信頼できる人と動きましょう。人の目が気になりすぎて自分を見失わないように。',
+      cta: '信頼型の宿経営をどう立ち上げるか\nセミナーでリアルな事例をお伝えします。',
+    },
+    boss: {
+      name: '社長タイプ',
+      star: '〜理性の星〜',
+      icon: '🏆',
+      color: '#27AE60',
+      colorLight: 'rgba(39,174,96,0.08)',
+      label: 'Type 社長 — 理性の星',
+      message: 'あなたは目標から逆算して確実に動く「社長タイプ」。旅館業において、あなたの最大の武器は「成功モデルを学んで忠実に実行できる力」です。稼働率・収支・口コミ評価をデータで管理し、着実に成長させるスタイルが得意。複数棟展開や事業拡大も視野に入れられます。',
+      features: [
+        { label: '強み①', text: '稼働率・収支をデータで管理し改善できる' },
+        { label: '強み②', text: '成功事例を学んで確実に実行できる実行力がある' },
+        { label: '強み③', text: '目標から逆算した収支計画を立て達成できる' },
+        { label: '強み④', text: '複数棟展開・スタッフ管理など事業拡大に向いている' },
+      ],
+      adviceTitle: '✦ 社長タイプの旅館づくり ステップ',
+      advice: [
+        '最初にしっかりした収支計画・回収シミュレーションを作る',
+        '成功している宿（コピー元）を徹底的にリサーチしベストプラクティスを学ぶ',
+        '稼働率・ADR・口コミスコアをKPIとして月次で管理する',
+        '1棟目を黒字化してから2棟目を検討する順番を守る',
+        '信頼できるメンター・サポート体制（ワンストップサービス）を持つ',
+      ],
+      caution: 'オリジナリティを追求しようとするとブレます。最初は「成功モデルの忠実なコピー」が正解です。ロールモデルが見つかれば迷いがなくなります。今日のセミナーがそのコピー元になります。',
+      cta: '成功の型を学んで確実に実行する。\nセミナーでそのロードマップをお渡しします。',
+    },
+    scholar: {
+      name: '学者タイプ',
+      star: '〜知性の星〜',
+      icon: '📘',
+      color: '#2980B9',
+      colorLight: 'rgba(41,128,185,0.08)',
+      label: 'Type 学者 — 知性の星',
+      message: 'あなたは知識と分析で判断する「学者タイプ」。旅館業において、あなたの最大の武器は「市場をリサーチして正確に判断できる力」です。深く調べてから動くため、参入前のリスク分析・立地調査・競合研究で失敗を最小化できます。ニッチな市場に特化した"専門宿"づくりが最もあなたらしいスタイルです。',
+      features: [
+        { label: '強み①', text: 'データに基づいた価格設定・集客戦略が得意' },
+        { label: '強み②', text: '参入前のリサーチでリスクを最小化できる' },
+        { label: '強み③', text: '「この分野は誰よりも詳しい」専門性が武器になる' },
+        { label: '強み④', text: 'ニッチな特化型・専門宿づくりに向いている' },
+      ],
+      adviceTitle: '✦ 学者タイプの旅館づくり ステップ',
+      advice: [
+        '立地・競合・ターゲット客層を徹底的にリサーチしてから物件を選ぶ',
+        '自分が「誰よりも詳しい」テーマや地域に特化した宿コンセプトを作る',
+        '収支シミュレーションを精緻に作り込み、納得してから動く',
+        'ただし「調べ続けて動けない」罠に注意。期限を決めてスタートする',
+        '知識をブログ・SNS・口コミで発信することで専門家ポジションを確立する',
+      ],
+      caution: '調べれば調べるほど不安になる、という落とし穴があります。「完璧な準備」は存在しません。リサーチ期間を3ヶ月と決め、それが終わったら小さく動き始めましょう。動きながら学ぶことが最大のインプットです。',
+      cta: 'データと知識で正しく判断するための\n基礎情報をセミナーでお伝えします。',
+    },
+  };
+
+  const TYPE_ORDER = ['king', 'child', 'noble', 'boss', 'scholar'];
+  const TYPE_ICON  = { king:'👑', child:'🎈', noble:'🎁', boss:'🏆', scholar:'📘' };
+  const TYPE_LABEL = { king:'王様', child:'子供', noble:'貴族', boss:'社長', scholar:'学者' };
+  const TYPE_COLOR = { king:'#C0392B', child:'#E67E22', noble:'#8E44AD', boss:'#27AE60', scholar:'#2980B9' };
+  const TOTAL_Q = QUESTIONS.length;
+
+  // ===== 状態 =====
+  const answers = {};  // {id: score}
+
+  // ===== 初期化 =====
+  (function init() {
+    const container = document.getElementById('questionsContainer');
+    QUESTIONS.forEach(q => {
+      const card = document.createElement('div');
+      card.className = 'question-card fade-up';
+      card.id = 'card-' + q.id;
+
+      const likertHtml = SCALE.map(s =>
+        `<div class="likert-btn" onclick="selectAnswer(${q.id}, ${s.val}, this)">
+          <span class="likert-btn__score">${s.val}</span>
+          <span class="likert-btn__label">${s.label}</span>
+        </div>`
+      ).join('');
+
+      card.innerHTML = `
+        <div class="q-header">
+          <div class="q-num">${q.id}</div>
+          <p class="q-text">${q.text}</p>
+        </div>
+        <div class="likert">${likertHtml}</div>
+      `;
+      container.appendChild(card);
+    });
+
+    // Intersection observer for fade
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  })();
+
+  // ===== 回答選択 =====
+  function selectAnswer(qId, score, btn) {
+    const card = document.getElementById('card-' + qId);
+    card.querySelectorAll('.likert-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    answers[qId] = score;
+    card.classList.add('answered');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const done = Object.keys(answers).length;
+    const pct = Math.round(done / TOTAL_Q * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressCount').textContent = done + ' / ' + TOTAL_Q;
+  }
+
+  // ===== 結果表示 =====
+  function showResult() {
+    const done = Object.keys(answers).length;
+    const remain = TOTAL_Q - done;
+    if (remain > 0) {
+      document.getElementById('warnNotice').style.display = 'block';
+      document.getElementById('warnCount').textContent = remain;
+      for (let q of QUESTIONS) {
+        if (!answers[q.id]) {
+          document.getElementById('card-' + q.id).scrollIntoView({ behavior:'smooth', block:'center' });
+          break;
+        }
+      }
+      return;
+    }
+    document.getElementById('warnNotice').style.display = 'none';
+
+    // タイプ別スコア集計
+    const scores = { king: 0, child: 0, noble: 0, boss: 0, scholar: 0 };
+    QUESTIONS.forEach(q => { scores[q.type] += (answers[q.id] || 0); });
+    const maxPerType = 5 * 4; // 5問 × 4点
+
+    // 最高タイプ
+    let topType = 'king', topScore = 0;
+    for (const [t, s] of Object.entries(scores)) {
+      if (s > topScore) { topScore = s; topType = t; }
+    }
+
+    const T = TYPES[topType];
+
+    // ヒーロー背景
+    document.getElementById('resultHero').style.background =
+      `linear-gradient(135deg, ${T.colorLight.replace('0.08','0.14')}, ${T.colorLight})`;
+    document.getElementById('resultBg').style.background =
+      `radial-gradient(ellipse at 50% 50%, ${T.color}, transparent 70%)`;
+
+    // ラベル
+    const labelEl = document.getElementById('resultLabel');
+    labelEl.textContent = T.label;
+    labelEl.style.cssText = `color:${T.color}; border:1.5px solid ${T.color}40; background: ${T.colorLight}`;
+
+    document.getElementById('resultStar').style.color = T.color;
+    document.getElementById('resultStar').textContent = T.star;
+    document.getElementById('resultIcon').textContent = T.icon;
+    document.getElementById('resultTypeName').textContent = T.name;
+    document.getElementById('resultTypeName').style.color = T.color;
+    document.getElementById('resultTypeSub').textContent = '得点：' + topScore + ' / ' + maxPerType + 'pt';
+    document.getElementById('resultTypeSub').style.color = T.color;
+
+    // スコアリング（リング）
+    const ringsEl = document.getElementById('scoreRings');
+    ringsEl.innerHTML = '';
+    const circumference = 196; // 2π × 31
+    TYPE_ORDER.forEach(t => {
+      const s = scores[t];
+      const pct = s / maxPerType;
+      const offset = circumference * (1 - pct);
+      const isTop = (t === topType);
+      const ringHtml = `
+        <div class="ring-item">
+          <div class="ring-wrap">
+            <svg width="72" height="72" viewBox="0 0 72 72">
+              <circle class="ring-bg-c" cx="36" cy="36" r="31"/>
+              <circle class="ring-fill-c" cx="36" cy="36" r="31"
+                style="stroke:${TYPE_COLOR[t]}; stroke-dasharray:${circumference}; stroke-dashoffset:${circumference};"
+                data-offset="${offset}"/>
+            </svg>
+            <div class="ring-inner" style="color:${isTop ? TYPE_COLOR[t] : '#A48070'}">
+              <span class="ring-pct" style="font-size:${isTop?'1rem':'0.88rem'}">${s}pt</span>
+              <span class="ring-name">${TYPE_LABEL[t]}</span>
+            </div>
+          </div>
+          ${isTop ? `<div style="font-size:0.65rem;font-weight:700;color:${T.color};letter-spacing:0.08em">◀ あなた</div>` : ''}
+        </div>`;
+      ringsEl.insertAdjacentHTML('beforeend', ringHtml);
+    });
+    // アニメーション
+    setTimeout(() => {
+      ringsEl.querySelectorAll('.ring-fill-c').forEach(el => {
+        el.style.strokeDashoffset = el.dataset.offset;
+        el.style.transition = 'stroke-dashoffset 1.2s ease';
+      });
+    }, 300);
+
+    // メッセージ
+    document.getElementById('resultMessage').textContent = T.message;
+    const msgBorder = T.color;
+    document.getElementById('resultMessage').style.borderLeftColor = msgBorder;
+
+    // 強みグリッド
+    const fg = document.getElementById('featureGrid');
+    fg.innerHTML = '';
+    T.features.forEach(f => {
+      fg.insertAdjacentHTML('beforeend',
+        `<div class="feature-card">
+          <p class="feature-card__label" style="color:${T.color}">${f.label}</p>
+          <p class="feature-card__text">${f.text}</p>
+        </div>`);
+    });
+
+    // アドバイス
+    document.getElementById('adviceTitle').textContent = T.adviceTitle;
+    document.getElementById('adviceBox').style.cssText =
+      `background:${T.colorLight.replace('0.08','0.06')}; border:1px solid ${T.color}30;`;
+    const al = document.getElementById('adviceList');
+    al.innerHTML = '';
+    T.advice.forEach(a => {
+      const li = document.createElement('li');
+      li.textContent = a;
+      al.appendChild(li);
+    });
+    al.querySelectorAll('li::before').forEach(el => el.style.color = T.color);
+
+    // 注意点
+    document.getElementById('cautionText').textContent = T.caution;
+
+    // スコア詳細
+    const sd = document.getElementById('scoreDetail');
+    sd.innerHTML = '';
+    TYPE_ORDER.forEach(t => {
+      const s = scores[t];
+      const pctBar = Math.round(s / maxPerType * 100);
+      const isTop = (t === topType);
+      sd.insertAdjacentHTML('beforeend', `
+        <div class="score-row">
+          <span class="score-row__icon">${TYPE_ICON[t]}</span>
+          <span class="score-row__label" style="${isTop ? `font-weight:700;color:${TYPE_COLOR[t]}` : ''}">${TYPE_LABEL[t]}タイプ</span>
+          <div class="score-row__bar-bg">
+            <div class="score-row__bar" style="width:0%; background:${TYPE_COLOR[t]};" data-w="${pctBar}%"></div>
+          </div>
+          <span class="score-row__val">${s}pt</span>
+        </div>`);
+    });
+    setTimeout(() => {
+      sd.querySelectorAll('.score-row__bar').forEach(b => {
+        b.style.transition = 'width 0.9s ease';
+        b.style.width = b.dataset.w;
+      });
+    }, 400);
+
+    // CTA
+    document.getElementById('ctaText').textContent = T.cta;
+
+    // セクション切替
+    document.getElementById('quizSection').style.display = 'none';
+    document.getElementById('progressWrap').style.display = 'none';
+    const rs = document.getElementById('resultSection');
+    rs.style.display = 'block';
+    setTimeout(() => rs.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  }
+
+  // ===== やり直し =====
+  function retryQuiz() {
+    for (const k in answers) delete answers[k];
+    document.querySelectorAll('.likert-btn').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('.question-card').forEach(c => c.classList.remove('answered'));
+    updateProgress();
+    document.getElementById('progressWrap').style.display = 'block';
+    document.getElementById('quizSection').style.display = 'block';
+    document.getElementById('resultSection').style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
+</body>
+</html>
