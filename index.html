@@ -1360,26 +1360,64 @@
       line-height: 2;
       margin-bottom: 32px;
     }
-    .seats {
-      display: inline-flex;
+    .seats-group {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 100px;
-      padding: 14px 32px;
-      margin-bottom: 32px;
+      justify-content: center;
+      gap: 14px;
+      margin: 12px 0 12px;
     }
-    .seats__icon { font-size: 1.5rem; }
-    .seats__text { color: var(--cream); }
-    .seats__count {
+    .seat-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 18px;
+      padding: 16px 26px;
+      color: var(--cream);
+      min-width: 190px;
+      text-align: center;
+    }
+    .seat-pill__day {
       font-family: var(--font-serif);
-      font-size: 2rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .seat-pill__type {
+      font-size: 0.78rem;
+      color: rgba(251,247,242,0.75);
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+    .seat-pill__count {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--cream);
       line-height: 1;
     }
-    .seats__label { font-size: 0.85rem; color: rgba(251,247,242,0.7); }
+    .seat-pill__count strong {
+      font-size: 1.9rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin: 0 3px;
+    }
+    .seat-pill__divider {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: rgba(251,247,242,0.4);
+    }
+    @media (max-width: 560px) {
+      .seat-pill__divider { display: none; }
+      .seat-pill { width: 100%; max-width: 280px; }
+    }
+    .seats-note {
+      font-size: 0.78rem !important;
+      color: rgba(251,247,242,0.6) !important;
+      margin-bottom: 28px !important;
+      line-height: 1.7 !important;
+    }
 
     /* ===== CTA SECTION ===== */
     .cta-section {
@@ -2343,13 +2381,20 @@
           <strong style="color:var(--gold);">5/22 姫路見学＋リアル（10名）／5/23・24 オンライン（10名）</strong><br>
           それぞれ定員があります。気になった方は、今すぐどうぞ。
         </p>
-        <div class="seats">
-          <div class="seats__icon">👩</div>
-          <div class="seats__text">
-            <div class="seats__count">10 + 10</div>
-            <div class="seats__label">名様限定（女性）</div>
+        <div class="seats-group">
+          <div class="seat-pill">
+            <div class="seat-pill__day">5/22</div>
+            <div class="seat-pill__type">姫路見学＋リアル</div>
+            <div class="seat-pill__count">先着<strong>10</strong>名</div>
+          </div>
+          <div class="seat-pill__divider">／</div>
+          <div class="seat-pill">
+            <div class="seat-pill__day">5/23・24</div>
+            <div class="seat-pill__type">オンライン</div>
+            <div class="seat-pill__count">先着<strong>10</strong>名</div>
           </div>
         </div>
+        <p class="seats-note">※ 両日程とも女性限定・別枠でのご案内です（合算ではありません）</p>
         <br>
         <button class="btn-primary" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
           今すぐ無料で申込む
