@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>女性のための小規模旅館・民泊開業セミナー | 姫路スタイル 福永友香</title>
-  <meta name="description" content="300万円から始める、女性だから輝ける旅館ビジネス。実際に姫路で宿を運営する福永友香が、開業のリアルを全公開。先着10名限定・無料セミナー。">
+  <title>【第2回】女性のための小規模旅館・民泊開業セミナー ＋姫路の宿 見学ツアー | 姫路スタイル 福永友香</title>
+  <meta name="description" content="300万円から始める、女性だから輝ける旅館ビジネス。5/22は姫路の運営宿4軒を実際に見学できるリアルセミナー。現役オーナー福永友香が開業のリアルな数字と運営を全公開。先着10名限定・参加無料。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -225,6 +225,41 @@
       text-transform: uppercase;
       margin-bottom: 0;
     }
+    .hero__expertise {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: -8px 0 22px;
+    }
+    .hero__expertise-item {
+      background: var(--white);
+      border: 1.5px solid var(--rose-light);
+      color: var(--brown-deep);
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 0.78rem;
+      padding: 6px 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(181,118,106,0.12);
+    }
+    .hero__edition {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: #fff;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      letter-spacing: 0.15em;
+      padding: 6px 20px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(181,118,106,0.35);
+      position: relative;
+    }
+    .hero__edition::before {
+      content: '✦ ';
+      color: var(--cream);
+    }
     .hero__title {
       font-family: var(--font-serif);
       font-size: clamp(1.7rem, 4vw, 2.8rem);
@@ -233,6 +268,47 @@
       letter-spacing: 0.02em;
       color: var(--brown-deep);
       margin-bottom: 24px;
+    }
+
+    /* ===== VOICES（参加者の声） ===== */
+    .voices-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    @media (min-width: 640px) {
+      .voices-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .voices-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    .voice-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 26px;
+      box-shadow: 0 6px 24px rgba(58,40,32,0.08);
+      position: relative;
+      border-top: 4px solid var(--rose-light);
+    }
+    .voice-card__stars {
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .voice-card__text {
+      font-family: var(--font-serif);
+      font-size: 0.98rem;
+      color: var(--brown-deep);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .voice-card__author {
+      font-size: 0.82rem;
+      color: var(--brown-light);
+      border-top: 1px dashed var(--cream-dark);
+      padding-top: 12px;
     }
     .hero__title em {
       font-style: normal;
@@ -299,6 +375,47 @@
       margin-top: 16px;
       font-size: 0.8rem;
       color: var(--brown-light);
+    }
+    .hero__voice {
+      margin: 0 0 20px;
+      background: #FFFCF7;
+      border: 1.5px dashed var(--gold);
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: block;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(201,160,85,0.15);
+    }
+    .hero__voice::before {
+      content: '"';
+      position: absolute;
+      top: -8px;
+      left: 14px;
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      color: var(--gold);
+      line-height: 1;
+      background: var(--cream);
+      padding: 0 6px;
+    }
+    .hero__voice-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .hero__voice-text {
+      font-family: var(--font-serif);
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 600;
+      color: var(--brown-deep);
+      line-height: 1.7;
+    }
+    .hero__voice-text strong {
+      color: var(--rose);
+      background: linear-gradient(transparent 60%, rgba(201,160,85,0.25) 60%);
+      padding: 0 2px;
     }
     .hero__schedule {
       margin: 20px 0 24px;
@@ -368,10 +485,10 @@
     }
     .hero__deco {
       position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 80px;
-      height: 80px;
+      top: -24px;
+      right: -24px;
+      width: 120px;
+      height: 120px;
       background: var(--gold);
       border-radius: 50%;
       display: flex;
@@ -381,16 +498,16 @@
       font-family: var(--font-serif);
       font-weight: 700;
       text-align: center;
-      font-size: 0.72rem;
+      font-size: 0.95rem;
       line-height: 1.4;
-      box-shadow: 0 6px 20px rgba(201,160,85,0.4);
+      box-shadow: 0 8px 26px rgba(201,160,85,0.45);
     }
     .hero__deco-bottom {
       position: absolute;
-      bottom: -15px;
-      left: -15px;
-      width: 70px;
-      height: 70px;
+      bottom: -18px;
+      left: -18px;
+      width: 104px;
+      height: 104px;
       background: var(--sage);
       border-radius: 50%;
       display: flex;
@@ -399,10 +516,10 @@
       color: #fff;
       font-family: var(--font-serif);
       font-weight: 700;
-      font-size: 0.65rem;
+      font-size: 0.88rem;
       text-align: center;
       line-height: 1.5;
-      box-shadow: 0 4px 16px rgba(122,158,128,0.4);
+      box-shadow: 0 6px 20px rgba(122,158,128,0.45);
     }
     .hero__scroll {
       position: absolute;
@@ -428,6 +545,150 @@
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ===== TOUR SECTION ===== */
+    .tour-section {
+      background: linear-gradient(180deg, var(--cream) 0%, #FFF8F0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .tour-section::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(201,160,85,0.15), transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+    .tour-section .heading-lg em {
+      font-style: normal;
+      position: relative;
+    }
+    .tour-section .heading-lg em::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: rgba(201,160,85,0.35);
+      z-index: -1;
+    }
+    .tour-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 48px;
+      position: relative;
+    }
+    @media (min-width: 640px) {
+      .tour-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1000px) {
+      .tour-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .tour-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(58,40,32,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .tour-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 46px rgba(58,40,32,0.16);
+    }
+    .tour-card__photo {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--peach), var(--rose-light) 50%, var(--sage-light));
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tour-card__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .tour-card__photo.no-image::before {
+      content: '📷 写真準備中';
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+    .tour-card__label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(58,40,32,0.85);
+      color: var(--cream);
+      font-family: var(--font-serif);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+    }
+    .tour-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+      padding: 18px 20px 4px;
+    }
+    .tour-card__desc {
+      font-size: 0.82rem;
+      color: var(--brown-mid);
+      line-height: 1.8;
+      padding: 0 20px 20px;
+    }
+    .tour-info {
+      margin-top: 44px;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 26px 28px;
+      box-shadow: 0 6px 24px rgba(58,40,32,0.08);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 640px) {
+      .tour-info { grid-template-columns: repeat(2, 1fr); gap: 18px 32px; }
+    }
+    @media (min-width: 900px) {
+      .tour-info { grid-template-columns: repeat(5, 1fr); padding: 28px 24px; }
+    }
+    .tour-info__item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-left: 3px solid var(--rose-light);
+      padding-left: 14px;
+    }
+    @media (min-width: 900px) {
+      .tour-info__item { border-left: none; border-top: 3px solid var(--rose-light); padding-left: 0; padding-top: 10px; }
+    }
+    .tour-info__label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--rose);
+      letter-spacing: 0.08em;
+    }
+    .tour-info__value {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--brown-deep);
+      line-height: 1.5;
     }
 
     /* ===== SECTION DIVIDER ===== */
@@ -739,6 +1000,78 @@
       line-height: 1.9;
     }
     .bento-card--featured .bento-text { color: var(--rose-light); }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 40px;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 0;
+      box-shadow: 0 4px 18px rgba(58,40,32,0.06);
+      border-left: 4px solid var(--sage);
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .faq-item[open] { box-shadow: 0 8px 28px rgba(58,40,32,0.1); }
+    .faq-q {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+      padding: 20px 56px 20px 26px;
+      cursor: pointer;
+      position: relative;
+      list-style: none;
+      line-height: 1.6;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::before {
+      content: 'Q';
+      display: inline-block;
+      background: var(--sage);
+      color: #fff;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 26px;
+      font-size: 0.85rem;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .faq-q::after {
+      content: '＋';
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--sage);
+      font-size: 1.3rem;
+      font-weight: 700;
+      transition: transform 0.3s;
+    }
+    .faq-item[open] .faq-q::after {
+      content: '−';
+      transform: translateY(-50%) rotate(0deg);
+    }
+    .faq-a {
+      padding: 0 26px 22px 64px;
+      font-size: 0.92rem;
+      color: var(--brown-mid);
+      line-height: 1.95;
+    }
+    .faq-a strong { color: var(--brown-deep); }
+    @media (max-width: 500px) {
+      .faq-q { padding: 18px 48px 18px 20px; font-size: 0.92rem; }
+      .faq-a { padding: 0 20px 20px 20px; }
+    }
 
     /* ===== TARGET SECTION ===== */
     .target-list {
@@ -1144,29 +1477,43 @@
         <div class="hero__content fade-up">
           <div class="hero__brand fade-up">
             <img src="images/250X55-2.png" alt="姫路スタイル" class="hero__brand-logo">
-            <span class="hero__eyebrow">Seminar 2026</span>
+            <span class="hero__eyebrow">Seminar 2026 ・ 5月開催</span>
           </div>
+          <div class="hero__edition fade-up">第2回開催決定</div>
           <h1 class="hero__title">
             女性だから輝ける。<br>
             楽しみながら人生を変える<br>
             "小さな宿"という選択。
           </h1>
+          <div class="hero__expertise fade-up">
+            <span class="hero__expertise-item">🏛 建築士</span>
+            <span class="hero__expertise-item">🏠 宅地建物取引士</span>
+            <span class="hero__expertise-item">📊 経理担当</span>
+            <span class="hero__expertise-item">🌸 現役女性オーナー</span>
+          </div>
           <p class="hero__sub">
             建築士・宅建士の資格を持ち、建設会社を母体とする<br>
             姫路の現役女性オーナーが、開業のリアルをすべてお話しします。
           </p>
+          <div class="hero__voice">
+            <div class="hero__voice-label">★ 第1回参加者の声（反響多数）</div>
+            <p class="hero__voice-text">
+              「こんな<strong>リアルな数字</strong>や、<strong>リアルな運営の話</strong>が<br>
+              聞けるなんてすごい…！」
+            </p>
+          </div>
           <div class="hero__schedule">
-            <div class="hero__schedule-label">✦ 開催日程 決定　｜　3ＤＡＹ・3日全部視聴ＯＫ</div>
+            <div class="hero__schedule-label">✦ 第2回 開催日程 決定　｜　3DAY・見学ツアー＋リアル&オンラインセミナー</div>
             <div class="hero__schedule-dates">
-              4月17日（金）・18日（土）・19日（日）
+              5月22日（木）・23日（金）・24日（土）
             </div>
-            <div class="hero__schedule-sub">💻 オンライン開催　｜　20:00〜22:00</div>
-            <div class="hero__schedule-reason">家事・育児が一段落した夜の時間帯。<br>お子様が寝てから、ゆっくり自分のペースで参加できます。</div>
+            <div class="hero__schedule-sub">🏯 5/22は姫路で<strong>宿見学ツアー＋リアルセミナー</strong>（先着10名・参加無料）<br>💻 5/23・24はオンライン開催　｜　20:00〜22:00（先着10名）</div>
+            <div class="hero__schedule-reason">5/22は実際の運営宿「BESSO姫路／BESSO城前／侘寂／巡」の4軒を12:00〜15:00で見学。<br>その場の空気・動線・清掃品質を目で確かめてからセミナーへ。</div>
           </div>
           <div class="hero__badges">
             <span class="hero__badge">🆓 参加無料</span>
             <span class="hero__badge">👩 女性限定</span>
-            <span class="hero__badge">💻 オンライン開催</span>
+            <span class="hero__badge">🏯 リアル見学＋オンライン</span>
             <span class="hero__badge">⚡ 先着10名</span>
           </div>
           <button class="btn-primary" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
@@ -1181,13 +1528,92 @@
                 <img src="images/tomoka02.jpg" alt="福永 友香 ― 姫路スタイル代表">
               </div>
             </div>
-            <div class="hero__deco">先着<br><strong style="font-size:1.1rem;">10</strong>名<br>限定</div>
+            <div class="hero__deco">先着<br><strong style="font-size:1.8rem;line-height:1;">10</strong>名<br>限定</div>
             <div class="hero__deco-bottom">参加<br>無料</div>
           </div>
         </div>
       </div>
     </div>
     <div class="hero__scroll">SCROLL</div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- TOUR（5/22 姫路の宿見学ツアー）   -->
+  <!-- ================================ -->
+  <section class="section tour-section" id="tour">
+    <div class="container container--wide">
+      <div class="section-header text-center fade-up">
+        <div class="tag">第2回 最大の目玉 ／ 5月22日（木）</div>
+        <h2 class="heading-lg">姫路で稼働中の宿<br><em class="text-rose">4軒を一日で見学</em>できます</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          資料や写真ではなく、<strong>実際に稼働している4軒を目で見て、手で触れて、空気を感じる。</strong><br>
+          他セミナーでは絶対にできない体験を、<strong>先着10名様・参加無料</strong>でご用意しました。
+        </p>
+      </div>
+      <div class="tour-grid">
+        <div class="tour-card fade-up">
+          <div class="tour-card__photo">
+            <img src="images/himeji.jpg" alt="BESSO姫路" onerror="this.style.display='none';this.parentNode.classList.add('no-image');">
+            <div class="tour-card__label">見学 01</div>
+          </div>
+          <h3 class="tour-card__title">BESSO姫路</h3>
+          <p class="tour-card__desc">姫路駅徒歩圏の一棟貸し。インバウンド需要を取り込む主力施設。</p>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__photo">
+            <img src="images/shiromae.jpg" alt="BESSO城前" onerror="this.style.display='none';this.parentNode.classList.add('no-image');" loading="lazy">
+            <div class="tour-card__label">見学 02</div>
+          </div>
+          <h3 class="tour-card__title">BESSO城前</h3>
+          <p class="tour-card__desc">姫路城が目の前のロケーション。立地を活かした集客と内装の工夫。</p>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__photo">
+            <img src="images/wabisabi.jpg" alt="侘寂" onerror="this.style.display='none';this.parentNode.classList.add('no-image');" loading="lazy">
+            <div class="tour-card__label">見学 03</div>
+          </div>
+          <h3 class="tour-card__title">侘寂（わびさび）</h3>
+          <p class="tour-card__desc">古民家リノベーションの世界観。外国人ゲストから支持の高いコンセプト型宿。</p>
+        </div>
+        <div class="tour-card fade-up">
+          <div class="tour-card__photo">
+            <img src="images/meguru.JPG" alt="巡" onerror="this.style.display='none';this.parentNode.classList.add('no-image');" loading="lazy">
+            <div class="tour-card__label">見学 04</div>
+          </div>
+          <h3 class="tour-card__title">巡（めぐる）</h3>
+          <p class="tour-card__desc">女性目線で仕上げた内装・動線。ファミリー・グループに選ばれる設計。</p>
+        </div>
+      </div>
+      <div class="tour-info fade-up">
+        <div class="tour-info__item">
+          <div class="tour-info__label">📅 日時</div>
+          <div class="tour-info__value">5月22日（木）12:00〜15:00</div>
+        </div>
+        <div class="tour-info__item">
+          <div class="tour-info__label">📍 集合場所</div>
+          <div class="tour-info__value">姫路市内（お申込順に個別でご連絡）</div>
+        </div>
+        <div class="tour-info__item">
+          <div class="tour-info__label">👥 定員</div>
+          <div class="tour-info__value">先着10名・女性限定</div>
+        </div>
+        <div class="tour-info__item">
+          <div class="tour-info__label">💴 参加費</div>
+          <div class="tour-info__value">無料</div>
+        </div>
+        <div class="tour-info__item">
+          <div class="tour-info__label">🎤 見学後</div>
+          <div class="tour-info__value">同日夕方よりリアルセミナー開催</div>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:36px;">
+        <button class="btn-primary" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+          見学ツアー枠を確保する
+        </button>
+        <p class="small" style="margin-top:12px;">※ お申込いただいた順に、集合場所・移動方法の詳細をメールでご連絡します</p>
+      </div>
+    </div>
   </section>
 
   <!-- ================================ -->
@@ -1389,6 +1815,52 @@
   </section>
 
   <!-- ================================ -->
+  <!-- VOICES（第1回参加者の声）         -->
+  <!-- ================================ -->
+  <section class="section section--alt">
+    <div class="container container--wide">
+      <div class="section-header text-center fade-up">
+        <div class="tag">第1回参加者の声</div>
+        <h2 class="heading-lg">"リアルな数字と運営が<br>聞けてよかった"</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          第1回セミナーでは、「きれいごと」ではない<br>
+          現場のお金と段取りのリアルに、多くの反響をいただきました。
+        </p>
+      </div>
+      <div class="voices-grid voices-grid--3">
+        <div class="voice-card fade-up">
+          <div class="voice-card__stars">★★★★★</div>
+          <p class="voice-card__text">
+            管理費・維持費抜きでの売上、すごいですね…！
+            本で読むだけじゃ絶対わからない、<strong>生の数字</strong>でした。
+          </p>
+          <p class="voice-card__author">Y.Hさん / 20代女性・会社員</p>
+        </div>
+        <div class="voice-card fade-up">
+          <div class="voice-card__stars">★★★★★</div>
+          <p class="voice-card__text">
+            M&Aまで考えていなかったので、興味が湧きました。
+            "その先"の<strong>長期目線</strong>までお話しいただけて、視界が広がりました。
+          </p>
+          <p class="voice-card__author">Y.Mさん / 30代女性・会社員</p>
+        </div>
+        <div class="voice-card fade-up">
+          <div class="voice-card__stars">★★★★★</div>
+          <p class="voice-card__text">
+            管理が大変なイメージだったので、清掃部分を担ってくださる方がいるのは<strong>めちゃくちゃ有難い</strong>です。
+            1人で考えるのは難しかったので、心強かったです。
+          </p>
+          <p class="voice-card__author">Y.Kさん / 30代女性</p>
+        </div>
+      </div>
+      <p class="text-center small" style="margin-top:20px;color:var(--brown-light);">
+        ※ 第1回参加者からの生コメントより抜粋（プライバシー保護のため氏名はイニシャル表記にしています）
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================ -->
   <!-- SEMINAR CONTENT (BENTO UI)       -->
   <!-- ================================ -->
   <section class="section">
@@ -1435,6 +1907,71 @@
           <div class="bento-title">あなたの次の一歩<br>Q&Aセッション</div>
           <p class="bento-text">個別の質問に友香さんが直接回答。「私の場合はどうすれば？」という疑問を解消して帰れます。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- FAQ（第1回で実際に出た質問）      -->
+  <!-- ================================ -->
+  <section class="section section--sage">
+    <div class="container">
+      <div class="section-header text-center fade-up">
+        <div class="tag tag--sage">第1回で実際に出た質問</div>
+        <h2 class="heading-lg">みんな、ここが気になっていた</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          第1回セミナーで参加者から寄せられた質問をピックアップ。<br>
+          第2回でも、同じテーマを<strong>さらに実例とともに</strong>お答えします。
+        </p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item fade-up" open>
+          <summary class="faq-q">民泊と旅館業、姫路ではどちらが現実的ですか？</summary>
+          <div class="faq-a">
+            姫路では民泊新法の制約が厳しいため、<strong>旅館業（簡易宿所）で進めるケースが多い</strong>です。
+            民泊は年間180日制限、旅館業は365日営業可。収益性も旅館業のほうが優位です。第2回では具体的な判断軸をお話しします。
+          </div>
+        </details>
+        <details class="faq-item fade-up">
+          <summary class="faq-q">大阪・京都でも開業できますか？条例が厳しいと聞きます</summary>
+          <div class="faq-a">
+            可能ですが、京都は独自条例が厳しく、行政書士の対応も含め事前準備が重要です。
+            大阪はエリアにより難易度が大きく異なります。第1回参加者の実例（morimikukiさん等）も共有します。
+          </div>
+        </details>
+        <details class="faq-item fade-up">
+          <summary class="faq-q">お客様は日本人と外国人、どちらが多いですか？</summary>
+          <div class="faq-a">
+            施設タイプで明確に分かれます。
+            <strong>古民家タイプは外国人が約半数</strong>、
+            <strong>キッチン付きの施設は日本人が中心</strong>、
+            若いグループの<strong>一棟貸し</strong>も増えています。ターゲット設計から集客導線まで解説します。
+          </div>
+        </details>
+        <details class="faq-item fade-up">
+          <summary class="faq-q">清掃は外注ですか？品質はどう守っていますか？</summary>
+          <div class="faq-a">
+            <strong>清掃は外注＋抜き打ちチェックの併用</strong>です。
+            チェックリスト作成・清掃マニュアル整備・スタッフ教育を仕組み化しています。
+            1人オーナーでも回せる運用の型をお見せします。
+          </div>
+        </details>
+        <details class="faq-item fade-up">
+          <summary class="faq-q">融資や補助金は使えますか？</summary>
+          <div class="faq-a">
+            <strong>日本政策金融公庫の融資</strong>、<strong>小規模事業者持続化補助金</strong>（最大50万円・条件次第で200万円）等が候補です。
+            第2回では最新の採択動向と申請の段取りをお伝えします。
+          </div>
+        </details>
+        <details class="faq-item fade-up">
+          <summary class="faq-q">リアルな売上はどれくらいですか？</summary>
+          <div class="faq-a">
+            当社で運営中の<strong>複数施設の合算で、年間 約1,151万円</strong>の稼働実績があります（施設数・時期により変動）。
+            稼働率・単価・季節変動の内訳を、セミナーで<strong>実数字のまま公開</strong>します。
+            <span class="small" style="display:block;margin-top:8px;">※数値は当社運営実績に基づくものであり、同様の売上を保証するものではありません。</span>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -1511,15 +2048,26 @@
           <tr>
             <th>開催日時</th>
             <td>
-              <strong>2026年4月17日（金）・18日（土）・19日（日）</strong><br>
-              全3日間・各日 20:00〜22:00
+              <strong>2026年5月22日（木）・23日（金）・24日（土）</strong><br>
+              全3日間の開催
             </td>
           </tr>
           <tr>
             <th>開催形式</th>
             <td>
-              <strong>オンライン開催（Zoom予定）</strong><br>
-              <span class="small">申込後にURLをお送りします</span>
+              <strong>5/22：姫路でリアル開催（宿見学ツアー付き）</strong><br>
+              <strong>5/23・24：オンライン開催（Zoom予定）</strong><br>
+              <span class="small">オンラインはお申込後にURLをお送りします</span>
+            </td>
+          </tr>
+          <tr>
+            <th>🏯 特別企画<br>見学ツアー</th>
+            <td>
+              <strong>5月22日（木）12:00〜15:00</strong><br>
+              姫路で実際に運営中の4軒を見学<br>
+              <span class="small">・BESSO姫路<br>・BESSO城前<br>・侘寂（わびさび）<br>・巡（めぐる）</span><br>
+              <strong style="color:var(--rose);">先着10名・女性限定・参加無料</strong><br>
+              <span class="small">集合場所・移動方法は、お申込順に個別でご連絡します。<br>見学終了後、同日夕方よりリアルセミナーを実施します。</span>
             </td>
           </tr>
           <tr>
@@ -1532,14 +2080,16 @@
           <tr>
             <th>定員</th>
             <td>
-              <strong>先着10名（女性限定）</strong><br>
-              <span class="small">少人数制のため、お早めにお申し込みください</span>
+              <strong>5/22 姫路見学ツアー＋リアルセミナー：先着10名（女性限定）</strong><br>
+              <strong>5/23・24 オンラインセミナー：先着10名（女性限定）</strong><br>
+              <span class="small">両日程とも少人数制です。お早めにお申し込みください</span>
             </td>
           </tr>
           <tr>
             <th>時間</th>
             <td>
-              <strong>20:00〜22:00（各日2時間）</strong><br>
+              <strong>5/22：12:00〜15:00 見学ツアー／その後リアルセミナー</strong><br>
+              <strong>5/23・24：20:00〜22:00（オンライン各日2時間）</strong><br>
               セミナー60分 ＋ Q&Aタイム60分
             </td>
           </tr>
@@ -1609,16 +2159,17 @@
     <div class="container">
       <div class="narrowing-box fade-up">
         <div class="tag tag--white">重要なお知らせ</div>
-        <h2>このセミナーは<br><em>先着10名様限定</em>です</h2>
+        <h2>各日程<br><em>先着10名様限定</em>です</h2>
         <p>
           少人数制にこだわるのは、参加者ひとりひとりの疑問に<br>
           きちんと向き合いたいから。<br>
-          座席には限りがあります。気になった方は、今すぐどうぞ。
+          <strong style="color:var(--gold);">5/22 姫路見学＋リアル（10名）／5/23・24 オンライン（10名）</strong><br>
+          それぞれ定員があります。気になった方は、今すぐどうぞ。
         </p>
         <div class="seats">
           <div class="seats__icon">👩</div>
           <div class="seats__text">
-            <div class="seats__count">10</div>
+            <div class="seats__count">10 + 10</div>
             <div class="seats__label">名様限定（女性）</div>
           </div>
         </div>
@@ -1675,8 +2226,9 @@
         <a href="https://www.instagram.com/tomokafukunaga/" class="footer__link" target="_blank" rel="noopener">Instagram</a>
         <a href="#seminar-info" class="footer__link">開催概要</a>
         <a href="#apply" class="footer__link">お申し込み</a>
+        <a href="privacy.html" class="footer__link">プライバシーポリシー</a>
       </div>
-      <p class="footer__copy">© 2026 姫路スタイル 福永友香 / ハウスインフォ All Rights Reserved.</p>
+      <p class="footer__copy">© 2026 姫路スタイル 福永友香 / 株式会社ハウスインフォ All Rights Reserved.</p>
     </div>
   </footer>
 
