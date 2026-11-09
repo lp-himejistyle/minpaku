@@ -1907,7 +1907,22 @@
       z-index: 999;
     }
     .scroll-top.visible { opacity: 1; transform: translateY(0); }
-  </style>
+  
+    /* ===== 第5回デザイン変更（写真はそのまま・色と装飾で変化） ===== */
+    .hero { background: linear-gradient(155deg, #FBF7F2 0%, #F8E9DB 45%, #F0DCC0 80%, #EAD3B4 100%); }
+    .hero__blob1 { background: radial-gradient(circle at 40% 40%, rgba(181,118,106,0.40), rgba(201,160,85,0.24) 60%, transparent 80%); }
+    .hero__blob2 { background: radial-gradient(circle at 60% 60%, rgba(201,160,85,0.32), transparent 70%); }
+    .hero__photo { box-shadow: 0 0 0 6px #FFFFFF, 0 0 0 13px var(--gold), 0 24px 60px rgba(58,40,32,0.35); }
+    .hero__ribbon { position: absolute; top: 22px; left: -12px; z-index: 3; background: linear-gradient(135deg, #A84E3E, var(--rose)); color: #fff; font-family: var(--font-serif); font-weight: 700; font-size: 1rem; letter-spacing: 0.08em; padding: 10px 20px; border-radius: 100px; border: 2px solid var(--gold); box-shadow: 0 10px 24px rgba(58,40,32,0.35); transform: rotate(-6deg); }
+    .hero__deco { background: var(--rose); box-shadow: 0 8px 26px rgba(181,118,106,0.5); }
+    .hero__deco-bottom { background: var(--gold); box-shadow: 0 6px 20px rgba(201,160,85,0.5); }
+    .hero__schedule { background: linear-gradient(135deg, #3A2820 0%, #54382A 100%); border: 1.5px solid var(--gold); box-shadow: 0 14px 34px rgba(58,40,32,0.35); }
+    .hero__schedule-label { color: var(--gold); }
+    .hero__schedule-dates { color: #FFFFFF; }
+    .hero__schedule-sub { color: #F0E9DF; }
+    .hero__schedule-sub strong { color: #EBCB9A; }
+    .hero__schedule-reason { color: #E8C4B8; border-top-color: rgba(201,160,85,0.5); }
+</style>
 </head>
 <body>
 
@@ -1985,6 +2000,7 @@
         </div>
         <div class="hero__visual fade-up">
           <div class="hero__photo-wrap">
+            <div class="hero__ribbon">✦ 第5回 NEW ✦</div>
             <div class="hero__photo">
               <div class="hero__photo-inner">
                 <img src="images/tomoka02.jpg" alt="福永 友香 ― 姫路スタイル代表">
