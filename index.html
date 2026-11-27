@@ -1922,7 +1922,59 @@
     .hero__schedule-sub { color: #F0E9DF; }
     .hero__schedule-sub strong { color: #EBCB9A; }
     .hero__schedule-reason { color: #E8C4B8; border-top-color: rgba(201,160,85,0.5); }
-</style>
+
+    /* ===== BOOK CARD ===== */
+    .book-card {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: var(--white);
+      border: 1.5px solid var(--rose-light);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 28px;
+    }
+    .book-card img {
+      width: 110px;
+      flex-shrink: 0;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(58,40,32,0.18);
+    }
+    .book-card__label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--rose);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .book-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+      margin-bottom: 4px;
+    }
+    .book-card__sub {
+      font-size: 0.85rem;
+      color: var(--brown-mid);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .book-card__meta {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+      margin-bottom: 8px;
+    }
+    .book-card__text {
+      font-size: 0.88rem;
+      color: var(--brown-mid);
+      line-height: 1.8;
+    }
+    @media (max-width: 500px) {
+      .book-card { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -2333,6 +2385,16 @@
           <div class="speaker-links" style="margin-top:24px;">
             <a href="https://himejistyle.jp/" class="speaker-link" target="_blank" rel="noopener">🌐 姫路スタイル公式サイト</a>
             <a href="https://www.instagram.com/tomokafukunaga/" class="speaker-link" target="_blank" rel="noopener">📸 Instagram</a>
+          </div>
+          <div class="book-card">
+            <img src="images/oyado-book-cover.jpg" alt="『お宿運営のリアル』表紙">
+            <div>
+              <div class="book-card__label">著書</div>
+              <div class="book-card__title">『お宿運営のリアル』</div>
+              <div class="book-card__sub">姫路で5つの宿を回す私が、数字も失敗も全部書きました</div>
+              <div class="book-card__meta">2026年12月11日（金）発売｜Kindle書籍</div>
+              <p class="book-card__text">セミナーでお話ししている内容の「実物」を、一冊にまとめました。</p>
+            </div>
           </div>
         </div>
       </div>
